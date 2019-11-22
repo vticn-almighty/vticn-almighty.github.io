@@ -22,42 +22,41 @@
     <!-- 加载地图JSAPI脚本 -->
     <script src="https://webapi.amap.com/maps?v=1.4.15&key=c9ffc73dbe87c01ba37a3364bfba832b"></script>
     <script>
-        function showPosition(position) {
-            console.log(2);
-            console.log("纬度: " + position.coords.latitude +
-                "<br>经度: " + position.coords.longitude);
-                alert(position.coords.longitude,position.coords.latitude)
-            map.setCenter([position.coords.longitude, position.coords.latitude]); //设置地图中心点
+        
+var map = new AMap.Map('mapBox2venue', {
+    resizeEnable: true, 
+    zoom:15//是否监控地图容器大小变化；值为布尔值，true为允许，false为不允许
+});
+AMap.plugin('AMap.Geolocation', function () {
+    var geolocation = new AMap.Geolocation({
+        //使用web浏览器进行精准定位，并返回定位结果；
+        //注：下面的配置信息，可以去除谷歌定位默认的定位小圆圈；
+        enableHighAccuracy: true,//是否使用高精度定位，默认:true
+        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+        showButton: true,        //显示定位按钮，默认：true
+        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+        buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+        showMarker: false,        //定位成功后在定位到的位置显示点标记，默认：true
+        showCircle: false,        //定位成功后用圆圈表示定位精度范围，默认：true  （去掉圆形区域）
+        panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+        zoomToAccuracy: false      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+    });
+    map.addControl(geolocation);
+    geolocation.getCurrentPosition(function (status, result) {
+        if (status == 'complete') {
+            console.log('====result====', result); // result为精准定位成功的返回结果；
+        } else {
+            console.log('=====error result ====', result);//如果status不等于'complete'，则定位失败；返回的result中包含失败信息；
         }
-
-        function getLocation() {
-            console.log(1);
-            if (navigator.geolocation) {
-                console.log(navigator.geolocation);
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "该浏览器不支持获取地理位置。";
-            }
-        }
-
-        window.addEventListener("click", function () {
-            getLocation()
-        })
-
-        var map = new AMap.Map('container', {
-            resizeEnable: true, //是否监控地图容器尺寸变化
-            zoom: 15.5, //初始化地图层级
-            center: [113.08104610088503, 28.3307814015756] //初始化地图中心点
-        });
-        console.log(map);
-        var marker = new AMap.Marker({
-            map: map,
-            position: [113.08104610088503, 28.3307814015756],
-            label: {
-                offset: new AMap.Pixel(20, 20), //修改label相对于maker的位置
-                content: "我为什么在这。。。"
-            }
-        })
+    })
+    //可代替上方getCurrentPosition
+    //geolocation.getCurrentPosition();
+    //AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+    //AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+})
+ 
     </script>
 </body>
 
