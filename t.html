@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <title>地图显示</title>
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <!-- 加载地图JSAPI脚本 -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=fb25b71efb422e49b84facd46aa4eb27"></script>
+    <script>
+        function showPosition(position) {
+            console.log(2);
+            console.log("纬度: " + position.coords.latitude +
+                "<br>经度: " + position.coords.longitude);
+            map.setCenter([position.coords.longitude, position.coords.latitude]); //设置地图中心点
+        }
+
+        function getLocation() {
+            console.log(1);
+            if (navigator.geolocation) {
+                console.log(navigator.geolocation);
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "该浏览器不支持获取地理位置。";
+            }
+        }
+
+        window.addEventListener("click", function () {
+            getLocation()
+        })
+
+        var map = new AMap.Map('container', {
+            resizeEnable: true, //是否监控地图容器尺寸变化
+            zoom: 15.5, //初始化地图层级
+            center: [113.08104610088503, 28.3307814015756] //初始化地图中心点
+        });
+        console.log(map);
+        var marker = new AMap.Marker({
+            map: map,
+            position: [113.08104610088503, 28.3307814015756],
+            label: {
+                offset: new AMap.Pixel(20, 20), //修改label相对于maker的位置
+                content: "我为什么在这。。。"
+            }
+        })
+    </script>
+</body>
+
+</html>
