@@ -1,63 +1,35 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
-    <title>地图显示</title>
-    <style>
-        html,
-        body,
-        #container {
-            width: 100%;
-            height: 100%;
-        }
+    <title>地图初始IP城市定位</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/> 
+    <style type="text/css">
+       html,body,#container{
+           height:100%;
+       }
+       .info{
+           width:20rem;
+       }
     </style>
 </head>
-
 <body>
-    <div id="container"></div>
-    <!-- 加载地图JSAPI脚本 -->
-    <script src="https://webapi.amap.com/maps?v=1.4.15&key=c9ffc73dbe87c01ba37a3364bfba832b"></script>
-    <script>
-        
-var map = new AMap.Map('mapBox2venue', {
-    resizeEnable: true, 
-    zoom:15//是否监控地图容器大小变化；值为布尔值，true为允许，false为不允许
-});
-AMap.plugin('AMap.Geolocation', function () {
-    var geolocation = new AMap.Geolocation({
-        //使用web浏览器进行精准定位，并返回定位结果；
-        //注：下面的配置信息，可以去除谷歌定位默认的定位小圆圈；
-        enableHighAccuracy: true,//是否使用高精度定位，默认:true
-        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
-        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
-        showButton: true,        //显示定位按钮，默认：true
-        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
-        buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-        showMarker: false,        //定位成功后在定位到的位置显示点标记，默认：true
-        showCircle: false,        //定位成功后用圆圈表示定位精度范围，默认：true  （去掉圆形区域）
-        panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-        zoomToAccuracy: false      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+<div id="container"></div>
+<div class="info">
+    <p>在初始化地图时，如果center属性缺省，地图默认定位到用户所在城市的中心</p><hr>
+    <p id='adcode'></p>
+</div>
+<script type="text/javascript"
+            src="https://webapi.amap.com/maps?v=1.4.15&key=c9ffc73dbe87c01ba37a3364bfba832b"></script>
+<script type="text/javascript">
+    //初始化地图时，若center属性缺省，地图默认定位到用户所在城市的中心
+    var map = new AMap.Map('container', {
+        resizeEnable: true,zoom:11
     });
-    map.addControl(geolocation);
-    geolocation.getCurrentPosition(function (status, result) {
-        if (status == 'complete') {
-            console.log('====result====', result); // result为精准定位成功的返回结果；
-        } else {
-            console.log('=====error result ====', result);//如果status不等于'complete'，则定位失败；返回的result中包含失败信息；
-        }
-    })
-    //可代替上方getCurrentPosition
-    //geolocation.getCurrentPosition();
-    //AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
-    //AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
-})
- 
-    </script>
+    document.getElementById('adcode').innerHTML='当前城市adcode：'+map.getAdcode()+'<br>'+
+    '当前中心点：'+map.getCenter()
+</script>
 </body>
-
 </html>
