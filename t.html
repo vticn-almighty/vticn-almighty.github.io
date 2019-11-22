@@ -20,12 +20,13 @@
 <body>
     <div id="container"></div>
     <!-- 加载地图JSAPI脚本 -->
-    <script src="https://webapi.amap.com/maps?v=1.4.15&key=fb25b71efb422e49b84facd46aa4eb27"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=c9ffc73dbe87c01ba37a3364bfba832b"></script>
     <script>
         function showPosition(position) {
             console.log(2);
             console.log("纬度: " + position.coords.latitude +
                 "<br>经度: " + position.coords.longitude);
+                alert(position.coords.longitude,position.coords.latitude)
             map.setCenter([position.coords.longitude, position.coords.latitude]); //设置地图中心点
         }
 
