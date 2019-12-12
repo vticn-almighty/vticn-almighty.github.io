@@ -1,7 +1,7 @@
 <html>
 
 <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 
     <link rel="stylesheet" href="main.css">
     <!-- <style>
@@ -10,29 +10,124 @@
         }
     </style> -->
 </head>
+
 <body>
-    <!-- <div class="h-2 bg-red" style="width: 3.75rem"></div> -->
-<div class='w-full bg-whi-lighter shadow' style="height: 50px;">
-    <a href="" class='text-green-light no-underline text-3xl block pt-2 pl-4 float-left'>豆瓣</a>
-    <form action="" method="GET" class='w-32 h-8 bg-grey rounded-full overflow-hidden float-left mt-2 ml-3'>
-        <div class='w-1/5 h-full bg-red float-left'></div>
-        <div class="w-4/5 h-full bg-green-light float-left"></div>
-    </form>
-    <div class='w-16 h-full bg-red-light float-right'></div>
-</div>
-<div class='w-full h-16 bg-grey-lighter relative'>
-    <div class='w-48 h-full bg-grey-d arker absolute'>
-        <img src="https://img3.doubanio.com/f/frodo/144e6fb7d96701944e7dbb1a9bad51bdb1debe29/pics/app/logo.png" class="icon float-left w-10 mt-2 ml-4" alt="douban icon">
-        <p class='text-black float-left mt-3 font-medium ml-2'>豆瓣APP</p>
-        <p class='text-black float-left ml-2 mt-1 text-xs text-grey-dark'>记录你的书影音生活</p>
+    <div class='w-full bg-whi-lighter shadow-xl' style="height: 50px;">
+        <a href="" class='text-green-500 no-underline text-3xl block pt-1 pl-4 float-left'>豆瓣</a>
+        <form action="" method="GET" class='w-32 h-8 bg-gray-300 rounded-full overflow-hidden float-left mt-3 ml-3'>
+            <div class='w-8 h-full bg-re d-300 float-left pt-1 pl-2' >
+                <svg t="1576139539613" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="1271" width="25" height="25">
+                    <path
+                        d="M420.6 740.6c-84.7 0-164.3-33-224.2-92.8-59.9-59.9-92.8-139.5-92.8-224.2s33-164.3 92.8-224.2 139.5-92.8 224.2-92.8 164.3 33 224.2 92.8c59.9 59.9 92.8 139.5 92.8 224.2s-33 164.3-92.8 224.2c-59.9 59.9-139.5 92.8-224.2 92.8z m0-570c-67.6 0-131.1 26.3-178.9 74.1-47.8 47.8-74.1 111.3-74.1 178.9s26.3 131.1 74.1 178.9c47.8 47.8 111.3 74.1 178.9 74.1s131.1-26.3 178.9-74.1c47.8-47.8 74.1-111.3 74.1-178.9s-26.3-131.1-74.1-178.9c-47.8-47.7-111.3-74.1-178.9-74.1z"
+                        fill="#B3B3B3" p-id="1272"></path>
+                    <path
+                        d="M825.4 861.2c-8.2 0-16.4-3.1-22.6-9.4L599.4 648.5c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L848 806.6c12.5 12.5 12.5 32.8 0 45.3-6.2 6.2-14.4 9.3-22.6 9.3z"
+                        fill="#B3B3B3" p-id="1273"></path>
+                </svg>
+            </div>
+            <div class="w-4/6 h-full bg-gree n-200 float-left py-1 pl-2">
+            <input type="text" placeholder="搜索" class='w-full h-full bg-transparent outline-none'>
+            </div>
+        </form>
+        <div class='w-16 h-full b g-red-500 float-right'>
+            <a href="" class='w-8 float-right mr-3 mt-3 bg-gray-500 block' >
+                <img src="img/computer.png" alt="">
+            </a>
+        </div>
     </div>
-    <div class='w-48 h-full bg-grey-d ark absolute' style="right: 0">
-    <a href="" class='no-underline text-grey-lighter float-right mt-4 mr-4 text-sm bg-green rounded-full p-2 px-4'>打开App</a>
+    <div class='w-full h-16 bg-gray-200 relative'>
+        <div class='w-48 h-full bg-grey-d arker absolute'>
+            <img src="https://img3.doubanio.com/f/frodo/144e6fb7d96701944e7dbb1a9bad51bdb1debe29/pics/app/logo.png"
+                class="icon float-left w-10 mt-3 ml-4" alt="douban icon">
+            <p class='text-gray-800 float-left mt-3 font-medium ml-2'>豆瓣APP</p>
+            <p class=' float-left ml-2 -mt-1 text-xs text-gray-600'>记录你的书影音生活</p>
+        </div>
+        <div class='w-48 h-full bg-grey-d ark absolute' style="right: 0">
+            <a href=""
+                class='no-underline text-gray-200 float-right mt-5 mr-4 text-sm bg-green-500 rounded-full py-1 px-4'>打开App</a>
+        </div>
     </div>
-</div>
-<div class='w-4/5 m-auto'>
-    <div class='w-full h-64 bg-grey-darker'></div>
-</div>
+    <div class='w-full m-auto sm:w-4/5'>
+        <div class='w-full h-48 p-4'>
+            <div class='w-full bg-white clearfix border border-grey-lighter'>
+                <a href="" class='w-1/3 py-4 px-4 float-left border-r border-grey-lighter'>
+                    <p class='text-blue-500 font-medium text-xl text-center'>找电影</p>
+                    <p class='text-gray-600 text-sm text-center'>影院热映</p>
+                </a>
+                <a href="" class='w-1/3 py-4 px-4 float-left'>
+                    <p class='text-purple-600 font-medium text-xl text-center'>热播剧</p>
+                    <p class='text-gray-600 text-sm text-center'>剧集综艺</p>
+                </a>
+                <a href="" class='w-1/3 py-4 px-4 float-left border-l border-grey-lighter'>
+                    <p class='text-orange-700 font-medium text-xl text-center'>畅销书</p>
+                    <p class='text-gray-600 text-sm text-center'>畅销排行</p>
+                </a>
+            </div>
+            <div  class='w-full bg-white clearfix border border-grey-lighter border-t-0'>
+                <a href="" class='w-1/3 py-4 px-4 float-left border-r border-grey-lighter'>
+                    <p class='font-medium text-teal-500 text-xl text-center'>找小组</p>
+                    <p class='text-gray-600 text-sm text-center'>志趣相投</p>
+                </a>
+                <a href="" class='w-1/3 py-4 px-4 float-left'>
+                    <p class='font-medium text-orange-400 text-xl text-center'>找音乐</p>
+                    <p class='text-gray-600 text-sm text-center'>新碟榜</p>
+                </a>
+                <a href="" class='w-1/3 py-4 px-4 float-left border-l border-grey-lighter'>
+                    <p class='font-medium text-green-500 text-xl text-center'>豆品</p>
+                    <p class='text-gray-600 text-sm text-center'>生活美学</p>
+                </a>
+            </div>
+        </div>
+        <div class='w-full h-16 bg-r ed-500 p-2 py-4'>
+            <div class='font-medium text-center text-lg w-24 float-left'>豆瓣榜单</div>
+            <div class='font-medium text-center text-gray-800 text-xs w-24 pt-1 float-right'>用App看更多></div>
+        </div>
+        <div class='px-4'>
+            <div class='w-full rounded-lg overflow-hidden bg-blue-900'>
+                <div class='w-3/12 py-4 float-left'>
+                    <p class='text-gray-500 text-sm text-center'>豆瓣周榜</p>
+                    <p class='text-gray-300 text-lg text-center px-1 pt-1 leading-none'>华语口碑<br>剧集</p>
+                </div>
+                <div class=' w-9/12 bg-yellow-500 relative float-left h-24 bg-cover bg-no-repeat'
+                    style="background-image: url('https://img9.doubanio.com/view/photo/photo/public/p2573945976.jpg')">
+
+                    <ul class="text-white z-20 block list-decimal list-inside pt-4 pl-4 text-sm absolute ">
+                        <li>庆余年<span class='text-orange-400 text-xs pl-2'>8</span></li>
+                        <li>早餐中国 第二季<span class='text-orange-400 text-xs pl-2'>8.9</span></li>
+                        <li>想见你<span class='text-orange-400 text-xs pl-2'>8.8</span></li>
+                    </ul>
+                    <a href=""
+                        class='border rounded-full absolute right-0 mt-8 text-xs p-1 mr-3 text-gray-500 border-gray-500 z-20'>用App打开</a>
+
+                    <div class='bg-blue-900 z-10 w-full h-full opacity-75 absolute right-0 top-0'></div>
+
+                </div>
+            </div>
+            <div class='w-full mt-3 rounded-lg overflow-hidden bg-blue-900'>
+                <div class='w-3/12 float-left bg-gray-800'>
+                    <img src="https://img1.doubanio.com/img/files/file-1543460329.png" class='w-20 m-auto mt-2' alt="">
+                </div>
+                <div class=' w-9/12 bg-yellow-500 relative float-left h-24 bg-cover bg-no-repeat'
+                    style="background-image: url('https://img9.doubanio.com/view/photo/photo/public/p2309770674.jpg')">
+
+                    <ul class="text-white z-20 block list-decimal list-inside pt-4 pl-4 text-sm absolute ">
+                        <li>肖申克的救赎<span class='text-orange-400 text-xs pl-2'>9.7</span></li>
+                        <li>霸王别姬<span class='text-orange-400 text-xs pl-2'>9.6</span></li>
+                        <li>阿甘正传<span class='text-orange-400 text-xs pl-2'>9.5</span></li>
+                    </ul>
+                    <a href=""
+                        class='border rounded-full absolute right-0 mt-8 text-xs p-1 mr-3 text-gray-500 border-gray-500 z-20'>用App打开</a>
+
+                    <div class='bg-gray-800 z-10 w-full h-full opacity-75 absolute right-0 top-0'></div>
+
+                </div>
+            </div>
+            <a href="" class='w-full m-auto block text-center rounded-full text-gray-100 py-2 mt-10'
+                style="background: #42BD56">打开App，查看更多热门讨论</a>
+
+        </div>
+    </div>
 </body>
 
 </html>
