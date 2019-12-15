@@ -28,9 +28,9 @@
         <div class='w-full h-24'>
             <div class='x h-24  m-auto md:w-full'>
                 <div class='logo h-24 float-left md:w-48 w-1/6'>
-                    <a href="" class='mt-6 block p-2'>
+                    <a href="" class='mt-6 block pt-2'>
                         <img src="img/dblogo.png" alt="" class='hidden md:block'>
-                        <p class='text-green-600 text-2xl text-center md:hidden'>豆瓣</p>
+                        <p class='text-green-600 sm:text-2xl pl-1 text-xl text-center md:hidden'>豆瓣</p>
                     </a>
                 </div>
                 <div class='searchBox h-24 float-left px-3 md:w-64 w-4/6'>
@@ -58,7 +58,7 @@
                     </ul>
                 </div>
                 <div class='w-1/6 h-full float-right bg-b lue-400 block md:hidden'>
-                    <a href="https://vticn-almighty.github.io/dl" class='text-gray-600 text-center mt-10 block'>登陆／注册</a>
+                    <a href="" class='text-gray-600 text-center mt-8 block'>登陆</a>
                 </div>
 
             </div>
@@ -66,7 +66,7 @@
         <div class='w-full bg-teal-100 md:block hidden' style="height:300px">
             <div class=' m-auto h-full bg-teal-100 relative' style="width:1100px">
                 <div class='w-6/8 h-full  relative'>
-                    <img src="img/16ad990ec23uwn790d4.jpg" alt=""
+                    <img src="https://img9.doubanio.com/view/puppy_image/raw/public/16ad990ec23uwn790d4.jpg" alt=""
                         class='absolute bottom-0 h-full w-auto'>
                 </div>
                 <div class='h-full absolute right-0 top-0 pt-4' style="width: 300px">
@@ -147,7 +147,7 @@
                     <div class='  w-full  md:w-4/6 float-left ' style="overflow: hidden">
                         <div class='w-full mt-10 clearfix'>
                             <div class='w-1/2 sm:w-1/3 md:w-1/5 float-left text-gray-800 text-sm leading-tight'
-                                style="height: 260px" v-for="(todo,index) in books1" v-if="index <5">
+                                style="height: 260px" v-for="(todo,index) in books1">
                                 <a href="" style="width: 100px;height:138px" class='border m-auto block'><img
                                         :src="todo.link" alt=""></a>
                                 <p class='m-auto mt-3' style="width: 90px">{{todo.message}}</p>
@@ -155,16 +155,7 @@
                                     {{todo.type}}</p>
                             </div>
                         </div>
-                        <div class='w-full mt-6 h-24 clearfix'>
-                            <div class='w-1/2 sm:w-1/3 md:w-1/5 float-left text-gray-800 text-sm leading-tight'
-                                style="height: 280px" v-for="(todo,index) in books1" v-if="index >= 5">
-                                <a href="" style="width: 100px;height:138px" class='border m-auto block'><img
-                                        :src="todo.link" alt=""></a>
-                                <p class='m-auto mt-3' style="width: 90px">{{todo.message}}</p>
-                                <p class='text-center m-auto text-gray-600 text-xs mt-2' style="width: 90px">
-                                    {{todo.type}}</p>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class=' float-left hidden md:block w-2/6 pl-3 pt-8' style="overflow: hidden">
                         <div class='w-full ' style="height:30px">
@@ -182,7 +173,7 @@
                 </div>
             </div>
             <div class=' h-24 m-auto w-full'>
-                <div class='h-full m-auto text-sm text-gray-700 p-2 px-4' style="width:900px">© 2005－2019 douban.com,
+                <div class='m-auto text-sm text-gray-500 p-2 px-4 bt p-8 w-full'>© 2005－2019 douban.com,
                     all rights reserved 北京豆网科技有限公司
                     京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号
                     京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号
